@@ -61,3 +61,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+<----------------------------------------->
+        3.李栩林这样做，但需满足以下条件：
+上述版权声明和本许可声明应包含在
+软件的所有副本或重要部分中。
+软件按“原样”提供，没有任何形式的保证，无论是明示的还是
+暗示的，包括但不限于适销性、特定用途的适用性和非侵权性的保证。
+在任何情况下，作者或版权持有人都不对任何索赔、损害或其他
+责任负责，无论是合同行为、侵权行为还是其他行为，都与
+软件或软件的使用或其他交易有关。
+<---------------------------------------->
