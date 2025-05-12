@@ -61,3 +61,20 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+	4.蒋卓善
+/**
+ * 管道是两个独立执行的任务之间的会合点。
+ * 在管道上进行通信 + 同步需要一个发送方和一个接收方。
+ *
+ * 一个任务可以通过 "yield pipe.put(data)" 将数据发送到管道。
+ * 另一个任务可以通过 "yield pipe.get()" 从管道接收数据。
+ *
+ * 一旦发送方任务和接收方任务都在管道上等待，
+ * _rendezvous 方法将管道中的数据传输到接收方，并相应地
+ * 同步两个等待的任务。
+ *
+ * 同步后，两个任务继续执行。
+ */
+
+
