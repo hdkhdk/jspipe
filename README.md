@@ -62,6 +62,47 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+
+张达
+Pipe.prototype._rendezvous = function() {
+    var syncing = this.syncing, // 是否正在同步
+        inbox = this.inbox,    // 发送队列
+        outbox = this.outbox,  // 接收队列
+        data,                  // 数据
+        notify,                // 通知发送方的方法
+        send,                  // 发送数据的方法
+        receipt,               // 发送回执
+        senderWaiting,         // 是否有发送方等待
+        receiverWaiting;       // 是否有接收方等待
+
+    if (!syncing) {
+        this.syncing = true; // 开始同步
+
+        while ((senderWaiting = inbox.length > 0) && // 如果有发送方等待
+               (receiverWaiting = outbox.length > 0)) { // 并且有接收方等待
+
+            // 获取发送方任务放入管道的数据
+            data = inbox.shift();
+
+            // 获取通知发送方的方法
+            notify = inbox.shift();
+
+            // 获取发送数据到接收方的方法
+            send = outbox.shift();
+
+            // 发送数据
+            receipt = send(data);
+
+            // 通知发送方数据已发送
+            if (notify) {
+                notify(receipt);
+            }
+        }
+
+        this.syncing = false; // 结束同步
+    }
+};
+
 	4.蒋卓善
 /**
  * 管道是两个独立执行的任务之间的会合点。
@@ -76,5 +117,5 @@ THE SOFTWARE.
  *
  * 同步后，两个任务继续执行。
  */
-
+=======
 
