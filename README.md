@@ -61,3 +61,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+<---------------------------------------->
+2.罗荣文：构建：grunt build
+ES5 和 ES6 构建版本都会生成（分别在 dist-es5 和 dist-es6 目录中），并且每个构建输出都包括 AMD、CommonJS 和模块模式格式的模块。
+ES5 兼容文件（*.es5.js）是使用 Facebook 的 regenerator 生成的，这是一个将（ES6）生成器代码转译为 ES5 的工具。你可以在这里找到它：https://github.com/facebook/regenerator。
+JS/Pipe 是免费软件，根据 MIT 许可证条款分发。
+JS/Pipe 可以用于任何目的，包括商业用途，完全免费。
+无需任何文件工作，无需版税，也没有类似 GNU 的“copyleft”限制。
+只需下载并使用它。
+版权所有 (c) 2013 Joubert Nel
+特此授予任何获得本软件及其相关文档文件（“软件”）副本的人免费许可，
+以无限制地处理软件，包括但不限于使用、复制、修改、合并、发布、分发、
+再授权和/或出售软件副本的权利，并允许向其提供软件的人
+<-------------------------------------------->
