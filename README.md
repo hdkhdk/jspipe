@@ -1,3 +1,4 @@
+<!-- by liugaozhi -->
 # JS/Pipe
 
 JS/Pipe is a minimal library that makes it easy to *coordinate complex concurrent* streams of events and other data using *plain* JavaScript. No callbacks or chained functions in sight. 
@@ -23,6 +24,7 @@ We use Facebook Regenerator.
 2. Install Grunt if necessary: `npm install -g grunt`
 3. Install dev dependencies: `npm install`
 3. Build: `grunt build`
+<!-- by liugaozhi -->
 
 Both ES5 and ES6 builds are produced (in the dist-es5 and dist-es6 directories respectively) and for each the build output includes modules in the AMD, CommonJS, and module pattern formats. 
 
