@@ -61,21 +61,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+<------------------------------------------->
 
-<----------------------------------------->
-        3.李栩林这样做，但需满足以下条件：
-上述版权声明和本许可声明应包含在
-软件的所有副本或重要部分中。
-软件按“原样”提供，没有任何形式的保证，无论是明示的还是
-暗示的，包括但不限于适销性、特定用途的适用性和非侵权性的保证。
-在任何情况下，作者或版权持有人都不对任何索赔、损害或其他
-责任负责，无论是合同行为、侵权行为还是其他行为，都与
-软件或软件的使用或其他交易有关。
-<---------------------------------------->
-=======
-
-<---------------------------------------->
-2.罗荣文：构建：grunt build
+         2.罗荣文：构建：grunt build
 ES5 和 ES6 构建版本都会生成（分别在 dist-es5 和 dist-es6 目录中），并且每个构建输出都包括 AMD、CommonJS 和模块模式格式的模块。
 ES5 兼容文件（*.es5.js）是使用 Facebook 的 regenerator 生成的，这是一个将（ES6）生成器代码转译为 ES5 的工具。你可以在这里找到它：https://github.com/facebook/regenerator。
 JS/Pipe 是免费软件，根据 MIT 许可证条款分发。
@@ -86,64 +74,4 @@ JS/Pipe 可以用于任何目的，包括商业用途，完全免费。
 特此授予任何获得本软件及其相关文档文件（“软件”）副本的人免费许可，
 以无限制地处理软件，包括但不限于使用、复制、修改、合并、发布、分发、
 再授权和/或出售软件副本的权利，并允许向其提供软件的人
-<-------------------------------------------->
-=======
-
-
-张达
-Pipe.prototype._rendezvous = function() {
-    var syncing = this.syncing, // 是否正在同步
-        inbox = this.inbox,    // 发送队列
-        outbox = this.outbox,  // 接收队列
-        data,                  // 数据
-        notify,                // 通知发送方的方法
-        send,                  // 发送数据的方法
-        receipt,               // 发送回执
-        senderWaiting,         // 是否有发送方等待
-        receiverWaiting;       // 是否有接收方等待
-
-    if (!syncing) {
-        this.syncing = true; // 开始同步
-
-        while ((senderWaiting = inbox.length > 0) && // 如果有发送方等待
-               (receiverWaiting = outbox.length > 0)) { // 并且有接收方等待
-
-            // 获取发送方任务放入管道的数据
-            data = inbox.shift();
-
-            // 获取通知发送方的方法
-            notify = inbox.shift();
-
-            // 获取发送数据到接收方的方法
-            send = outbox.shift();
-
-            // 发送数据
-            receipt = send(data);
-
-            // 通知发送方数据已发送
-            if (notify) {
-                notify(receipt);
-            }
-        }
-
-        this.syncing = false; // 结束同步
-    }
-};
-
-	4.蒋卓善
-/**
- * 管道是两个独立执行的任务之间的会合点。
- * 在管道上进行通信 + 同步需要一个发送方和一个接收方。
- *
- * 一个任务可以通过 "yield pipe.put(data)" 将数据发送到管道。
- * 另一个任务可以通过 "yield pipe.get()" 从管道接收数据。
- *
- * 一旦发送方任务和接收方任务都在管道上等待，
- * _rendezvous 方法将管道中的数据传输到接收方，并相应地
- * 同步两个等待的任务。
- *
- * 同步后，两个任务继续执行。
- */
-=======
-
-
+<------------------------------------------->
